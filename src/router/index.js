@@ -55,6 +55,7 @@ const routes = [
     path: "/sign-in",
     name: "SignIn",
     component: SignIn,
+    beforeEnter: Guard.auth
   },
   {
     path: "/sign-up",
