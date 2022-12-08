@@ -13,7 +13,13 @@
           <div class="card z-index-0 fadeIn3 fadeInBottom">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
               <div
-                class="bg-gradient-success shadow-success border-radius-lg py-3 pe-1"
+                class="
+                  bg-gradient-success
+                  shadow-success
+                  border-radius-lg
+                  py-3
+                  pe-1
+                "
               >
                 <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">
                   Logar
@@ -38,6 +44,9 @@
               </div>
             </div>
             <div class="card-body">
+              <material-alert v-if="errorMensagem"  color="danger" dismissible=true>
+                {{ errorMensagem }}
+              </material-alert>
               <form
                 @submit.stop.prevent="submit"
                 role="form"
@@ -49,6 +58,7 @@
                     type="email"
                     label="Email"
                     name="email"
+                    size="lg"
                     @aoValueInput="setEmail"
                   />
                 </div>
@@ -91,17 +101,18 @@
 </template>
 
 <script>
+import MaterialAlert from "@/components/MaterialAlert.vue";
 import MaterialInput from "@/components/MaterialInput.vue";
 import MaterialSwitch from "@/components/MaterialSwitch.vue";
 import MaterialButton from "@/components/MaterialButton.vue";
 import axios from "axios";
-import Cookie from 'js-cookie';
+import Cookie from "js-cookie";
 import { mapMutations } from "vuex";
-
 
 export default {
   name: "sign-in",
   components: {
+    MaterialAlert,
     MaterialInput,
     MaterialSwitch,
     MaterialButton,
@@ -110,6 +121,7 @@ export default {
     return {
       email: "",
       senha: "",
+      errorMensagem: "",
     };
   },
   beforeMount() {
@@ -133,22 +145,34 @@ export default {
         login: this.email,
         senha: this.senha,
       };
-      console.log(payload);
-      axios(
-        "http://localhost:3002/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Access": "application/json",
-          },
-          data: payload,
-        }
-      )
-        .then(res => {
-          Cookie.set('token', res.data.token);
-          this.$router.push('/dashboard')
+      axios("http://localhost:3002/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Access: "application/json",
+        },
+        data: payload,
+      })
+        .then((res) => {
+          console.log(res.data);
+          Cookie.set("token", res.data.token);
+          this.$router.push("/dashboard");
         })
+        .catch((error) => {
+          if (error.response) {
+            // A requisição foi feita e o servidor respondeu com um código de status
+            // que sai do alcance de 2xx
+            this.errorMensagem = error.response.data.message;
+            console.error(error.response.data);
+            // console.error(error.response.status);
+            // console.error(error.response.headers);
+          } else if (error.request) {
+            // A requisição foi feita mas nenhuma resposta foi recebida
+            // `error.request` é uma instância do XMLHttpRequest no navegador e uma instância de
+            // http.ClientRequest no node.js
+            console.error(error.request);
+          }
+        });
     },
   },
 };

@@ -124,7 +124,8 @@
         <a
           class="btn mt-4 w-100"
           :class="`bg-gradient-${this.$store.state.color}`"
-          href="https://www.creative-tim.com/product/vue-material-dashboard-2-pro"
+          href="http://localhost:8080/sign-in"
+          @click="logout()"
           >Sair</a
         >
       </div>
@@ -132,10 +133,14 @@
   </div>
 </template>
 <script>
+import Cookie from "js-cookie";
 import SidenavCollapse from "./SidenavCollapse.vue";
 
 export default {
   name: "SidenavList",
+  components: {
+    SidenavCollapse
+  },
   props: {
     cardBg: String
   },
@@ -146,8 +151,12 @@ export default {
       isActive: "active"
     };
   },
-  components: {
-    SidenavCollapse
+  methods: {
+    logout() {
+      Cookie.remove('token');
+      //this.$router.push('/sign-in');
+    }
+
   }
 };
 </script>

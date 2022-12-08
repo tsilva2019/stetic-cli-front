@@ -8,7 +8,7 @@
       <i :class="getIcon(icon)" />
     </span>
     <span class="alert-text">
-      {{ icon && "&nbsp;" }}
+      {{ icon && "teste" }}
       <slot />
     </span>
     <button

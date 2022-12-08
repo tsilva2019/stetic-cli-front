@@ -19,7 +19,6 @@ export default {
           },
         }
       )
-        .then(next())
-        
+      .then(next())
     }
 }
