@@ -12,7 +12,7 @@
         aria-hidden="true"
         id="iconSidenav"
       ></i>
-      <a class="m-0 navbar-brand" href="/">
+      <a class="m-0 navbar-brand" href="/dashboard">
         <img
           :src="
             sidebarType === 'bg-white' ||

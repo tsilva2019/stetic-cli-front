@@ -129,52 +129,38 @@
 
     <div class="row">
       <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
-        <project-card
-          title="Projects"
-          description="<i class='fa fa-check text-info' aria-hidden='true'></i> <span class='font-weight-bold ms-1'>30 done</span> this month"
-          :headers="['Companies', 'Members', 'Budget', 'Progress']"
-          :projects="[
+        <agendamento-card
+          title="Agenda diária"
+          description="<i class='fa fa-check text-info' aria-hidden='true'></i> <span class='font-weight-bold ms-1'>30</span> hoje!"
+          :headers="['Cliente', 'Serviço', 'Status', 'Data/hora', 'Editar']"
+          :agendamentos="[
             {
-              logo: logoXD,
-              title: 'Material XD Material XD Version',
-              members: [team1, team2, team3, team4],
-              budget: '$14,000',
-              progress: { percentage: 60, color: 'info' },
+              foto: team1,
+              name: 'Fulana',
+              servico: 'Avaliação',
+              status: 'confirmado',
+              data: '14/12/2022 - 09:00'
             },
             {
-              logo: logoAtlassian,
-              title: 'Add Progress Track',
-              members: [team2, team4],
-              budget: '$3,000',
-              progress: { percentage: 10, color: 'info' },
+              foto: team2,
+              name: 'Ciclana',
+              servico: 'Avaliação',
+              status: 'pendente',
+              data: '14/12/2022 - 13:30'
             },
             {
-              logo: logoSlack,
-              title: 'Fix Platform Errors',
-              members: [team3, team1],
-              budget: 'Not set',
-              progress: { percentage: 100, color: 'success' },
+              foto: team3,
+              name: 'Beltrana',
+              servico: 'Avaliação',
+              status: 'confirmado',
+              data: '14/12/2022 - 14:30'
             },
             {
-              logo: logoSpotify,
-              title: 'Launch our Mobile App',
-              members: [team4, team3, team4, team1],
-              budget: '$20,500',
-              progress: { percentage: 100, color: 'success' },
-            },
-            {
-              logo: logoJira,
-              title: 'Add the New Pricing Page',
-              members: [team4],
-              budget: '$500',
-              progress: { percentage: 25, color: 'info' },
-            },
-            {
-              logo: logoJira,
-              title: 'Redesign New Online Shop',
-              members: [team1, team4],
-              budget: '$2,000',
-              progress: { percentage: 40, color: 'info' },
+              foto: team4,
+              name: 'Beltrana',
+              servico: 'Avaliação',
+              status: 'confirmado',
+              data: '14/12/2022 - 16:00'
             },
           ]"
         />
@@ -237,7 +223,7 @@ import ChartHolderCard from "./components/ChartHolderCard.vue";
 import ReportsBarChart from "@/examples/Charts/ReportsBarChart.vue";
 import ReportsLineChart from "@/examples/Charts/ReportsLineChart.vue";
 import MiniStatisticsCard from "./components/MiniStatisticsCard.vue";
-import ProjectCard from "./components/ProjectCard.vue";
+import AgendamentoCard from "./components/AgendamentoCard.vue";
 import TimelineList from "@/examples/Cards/TimelineList.vue";
 import TimelineItem from "@/examples/Cards/TimelineItem.vue";
 import logoXD from "@/assets/img/small-logos/logo-xd.svg";
@@ -271,7 +257,7 @@ export default {
     ReportsBarChart,
     ReportsLineChart,
     MiniStatisticsCard,
-    ProjectCard,
+    AgendamentoCard,
     TimelineList,
     TimelineItem,
   },

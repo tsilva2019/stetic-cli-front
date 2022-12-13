@@ -12,7 +12,7 @@ import Guard from "../services/middleware"
 const routes = [
   {
     path: "/",
-    name: "SignIn",
+    name: "home",
     component: SignIn,
   },
   {
