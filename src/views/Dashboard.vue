@@ -5,8 +5,8 @@
         <div class="row">
           <div class="col-lg-3 col-md-6 col-sm-6">
             <mini-statistics-card
-              :title="{ text: 'Today\'s Money', value: '$53k' }"
-              detail="<span class='text-success text-sm font-weight-bolder'>+55%</span> than last week"
+              :title="{ text: 'Dinheiro hoje', value: '$53k' }"
+              detail="<span class='text-success text-sm font-weight-bolder'>+55%</span> a mais nesta semana"
               :icon="{
                 name: 'weekend',
                 color: 'text-white',
@@ -16,8 +16,8 @@
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6 mt-lg-0 mt-4">
             <mini-statistics-card
-              :title="{ text: 'Today\'s Users', value: '2,300' }"
-              detail="<span class='text-success text-sm font-weight-bolder'>+3%</span> than last month"
+              :title="{ text: 'Usuarios hoje', value: '2,300' }"
+              detail="<span class='text-success text-sm font-weight-bolder'>+3%</span> a mais neste mês"
               :icon="{
                 name: 'leaderboard',
                 color: 'text-white',
@@ -27,8 +27,8 @@
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6 mt-lg-0 mt-4">
             <mini-statistics-card
-              :title="{ text: 'New Clients', value: '3,462' }"
-              detail="<span class='text-danger text-sm font-weight-bolder'>-2%</span> than yesterday"
+              :title="{ text: 'Novos Clientes', value: '3,462' }"
+              detail="<span class='text-danger text-sm font-weight-bolder'>-2%</span> do que ontem"
               :icon="{
                 name: 'person',
                 color: 'text-white',
@@ -38,8 +38,8 @@
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6 mt-lg-0 mt-4">
             <mini-statistics-card
-              :title="{ text: 'Sales', value: '$103,430' }"
-              detail="<span class='text-success text-sm font-weight-bolder'>+5%</span> Just updated"
+              :title="{ text: 'Vendas', value: '$103,430' }"
+              detail="<span class='text-success text-sm font-weight-bolder'>+5%</span> atualizado"
               :icon="{
                 name: 'weekend',
                 color: 'text-white',
@@ -51,9 +51,9 @@
         <div class="row mt-4">
           <div class="col-lg-4 col-md-6 mt-4">
             <chart-holder-card
-              title="Website Views"
-              subtitle="Last Campaign Performance"
-              update="campaign sent 2 days ago"
+              title="Visualizações do site"
+              subtitle="Desempenho da última campanha"
+              update="campanha enviada 2 dias atrás"
             >
               <reports-bar-chart
                 :chart="{
@@ -68,9 +68,9 @@
           </div>
           <div class="col-lg-4 col-md-6 mt-4">
             <chart-holder-card
-              title="Daily Sales"
-              subtitle="(<span class='font-weight-bolder'>+15%</span>) increase in today sales."
-              update="updated 4 min ago"
+              title="Vendas diárias"
+              subtitle="(<span class='font-weight-bolder'>+15%</span>) aumento nas vendas hoje."
+              update="atualizado há 4 minutos"
               color="success"
             >
               <reports-line-chart
@@ -96,9 +96,9 @@
           </div>
           <div class="col-lg-4 mt-4">
             <chart-holder-card
-              title="Completed Tasks"
-              subtitle="Last Campaign Performance"
-              update="just updated"
+              title="Serviços Concluídos"
+              subtitle="Desempenho da última campanha"
+              update="atualizado"
               color="dark"
             >
               <reports-line-chart
@@ -168,9 +168,9 @@
       <div class="col-lg-4 col-md-6">
         <timeline-list
           class="h-100"
-          title="Orders overview"
+          title="Visão geral dos pedidos"
           description="<i class='fa fa-arrow-up text-success' aria-hidden='true'></i>
-        <span class='font-weight-bold'>24%</span> this month"
+        <span class='font-weight-bold'>24%</span> este mês"
         >
           <timeline-item
             :icon="{

@@ -105,7 +105,7 @@
                         data-toggle="tooltip"
                         data-original-title="Edit user"
                       >
-                      <i class="text-sm fas fa-pen text-secondary"></i>
+                      <i class="fas fa-pencil-alt text-dark me-2"></i>
                       </a>
                     </td>
               </tr>
@@ -140,11 +140,6 @@
         servico: String,
         status: String,
         data: String,
-        // progres: {
-        //   type: Object,
-        //   percentage: Number,
-        //   color: String,
-        // },
       },
     },
   };
