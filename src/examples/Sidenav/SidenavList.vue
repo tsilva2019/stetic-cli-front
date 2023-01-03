@@ -43,7 +43,7 @@
           </template>
         </sidenav-collapse>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <sidenav-collapse
           url="#"
           :aria-controls="''"
@@ -57,7 +57,7 @@
             >
           </template>
         </sidenav-collapse>
-      </li>
+      </li> -->
       <li class="nav-item">
         <sidenav-collapse
           url="#"
