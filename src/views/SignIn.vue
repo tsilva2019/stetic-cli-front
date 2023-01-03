@@ -130,8 +130,11 @@ export default {
   },
   beforeUnmount() {
     this.toggleEveryDisplay();
-    this.toggleHideConfig();
+    this.toggleHideConfig();   
   },
+  // created() {
+  //   this.submit();
+  // },
   methods: {
     ...mapMutations(["toggleEveryDisplay", "toggleHideConfig"]),
     setEmail(value) {
@@ -145,6 +148,12 @@ export default {
         login: this.email,
         senha: this.senha,
       };
+
+      if(Cookie.get("token")) {
+        //validar token
+        this.$router.push("/dashboard");
+      }
+
       axios("http://localhost:3002/login", {
         method: "POST",
         headers: {
